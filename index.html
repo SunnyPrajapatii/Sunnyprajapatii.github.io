@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,127 +6,309 @@
 
 <title>Sunny Prajapatii | Trader & Creator</title>
 
+<meta name="description" content="Sunny Prajapatii — Trader, Content Creator and Digital Creator.">
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#050b14;
-    color:white;
-    line-height:1.6;
+    font-family:'Inter',Arial,sans-serif;
+    background:#030811;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-nav{
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00bfff;
+    filter:blur(180px);
+    opacity:.10;
+    top:15%;
+    right:-200px;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#0878ff;
+    filter:blur(180px);
+    opacity:.08;
+    bottom:0;
+    left:-200px;
+    pointer-events:none;
+}
+
+/* NAVBAR */
+
+.navbar{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    padding:18px 7%;
+    height:76px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    background:rgba(5,11,20,.85);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(100,200,255,.12);
-    z-index:1000;
+    justify-content:space-between;
+    padding:0 7%;
+    background:rgba(3,8,17,.72);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+    z-index:999;
 }
 
 .logo{
-    font-size:21px;
-    font-weight:800;
-    color:#61d9ff;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:-.5px;
+    color:#67ddff;
 }
 
-nav a{
-    color:#ccc;
+.nav-links{
+    display:flex;
+    gap:32px;
+}
+
+.nav-links a{
     text-decoration:none;
-    margin-left:22px;
+    color:#aab5c5;
     font-size:14px;
+    font-weight:600;
+    transition:.3s;
 }
 
-nav a:hover{
-    color:#61d9ff;
+.nav-links a:hover{
+    color:#65ddff;
 }
+
+.nav-button{
+    text-decoration:none;
+    padding:11px 20px;
+    border:1px solid rgba(101,221,255,.35);
+    border-radius:30px;
+    color:#65ddff;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* HERO */
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
-    padding:120px 8% 70px;
-    background:
-    radial-gradient(circle at 75% 35%,rgba(0,180,255,.18),transparent 30%),
-    radial-gradient(circle at 20% 70%,rgba(0,120,255,.10),transparent 30%);
+    padding:150px 8% 100px;
+    position:relative;
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:70px 70px;
+    mask-image:linear-gradient(to bottom,black,transparent);
+    pointer-events:none;
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:850px;
+    position:relative;
+    z-index:2;
 }
 
-.tag{
-    display:inline-block;
-    padding:8px 15px;
-    border:1px solid rgba(97,217,255,.35);
-    border-radius:30px;
-    color:#61d9ff;
-    font-size:13px;
-    margin-bottom:25px;
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:9px 16px;
+    border:1px solid rgba(101,221,255,.3);
+    border-radius:40px;
+    color:#68dcff;
+    background:rgba(101,221,255,.04);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    margin-bottom:28px;
 }
 
-h1{
-    font-size:clamp(48px,9vw,90px);
-    line-height:1;
-    margin-bottom:22px;
+.dot{
+    width:7px;
+    height:7px;
+    background:#68dcff;
+    border-radius:50%;
+    box-shadow:0 0 15px #68dcff;
+}
+
+.hero h1{
+    font-size:clamp(55px,9vw,105px);
+    line-height:.94;
+    letter-spacing:-5px;
+    font-weight:900;
+    margin-bottom:30px;
+}
+
+.white{
+    color:#fff;
 }
 
 .gradient{
-    background:linear-gradient(90deg,#fff,#61d9ff);
+    background:linear-gradient(100deg,#fff 0%,#69ddff 45%,#258cff 100%);
     -webkit-background-clip:text;
     color:transparent;
 }
 
-.hero p{
-    color:#9ba8b8;
-    font-size:18px;
+.hero-description{
     max-width:650px;
-    margin-bottom:32px;
+    color:#8f9cad;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
 }
 
-.buttons a{
-    display:inline-block;
-    padding:14px 24px;
-    margin-right:10px;
-    border-radius:30px;
+.hero-buttons{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:16px 25px;
+    border-radius:50px;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:800;
+    font-size:14px;
+    transition:.3s;
 }
 
-.primary{
-    background:#61d9ff;
+.btn-primary{
     color:#03101a;
+    background:#68dcff;
+    box-shadow:0 0 35px rgba(104,220,255,.16);
 }
 
-.secondary{
-    border:1px solid #294052;
-    color:white;
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 35px rgba(104,220,255,.28);
 }
+
+.btn-outline{
+    color:#fff;
+    border:1px solid #25394b;
+    background:rgba(255,255,255,.025);
+}
+
+.btn-outline:hover{
+    border-color:#68dcff;
+    color:#68dcff;
+    transform:translateY(-3px);
+}
+
+/* FLOATING CARD */
+
+.market-card{
+    position:absolute;
+    right:8%;
+    top:50%;
+    transform:translateY(-50%);
+    width:280px;
+    padding:24px;
+    background:rgba(8,18,30,.75);
+    border:1px solid rgba(101,221,255,.16);
+    border-radius:22px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.market-label{
+    color:#738195;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+}
+
+.market-title{
+    margin-top:8px;
+    font-size:22px;
+    font-weight:800;
+}
+
+.chart{
+    height:90px;
+    margin:20px 0;
+    position:relative;
+    overflow:hidden;
+}
+
+.chart svg{
+    width:100%;
+    height:100%;
+}
+
+.market-number{
+    color:#69ddff;
+    font-size:27px;
+    font-weight:800;
+}
+
+.market-small{
+    color:#6d7b8e;
+    font-size:12px;
+}
+
+/* SECTIONS */
 
 section{
-    padding:90px 8%;
+    padding:110px 8%;
+    position:relative;
 }
 
-.section-title{
-    font-size:38px;
+.section-tag{
+    color:#68dcff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
     margin-bottom:15px;
 }
 
-.section-subtitle{
-    color:#8795a6;
-    margin-bottom:40px;
+.section-title{
+    font-size:clamp(35px,5vw,58px);
+    line-height:1.05;
+    letter-spacing:-2px;
+    margin-bottom:18px;
 }
+
+.section-description{
+    color:#8592a4;
+    max-width:650px;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+/* CARDS */
 
 .cards{
     display:grid;
@@ -136,93 +317,202 @@ section{
 }
 
 .card{
-    padding:30px;
-    border:1px solid #1b3040;
-    border-radius:20px;
-    background:linear-gradient(145deg,#0a1420,#07101a);
-    transition:.3s;
+    position:relative;
+    padding:32px;
+    min-height:240px;
+    border:1px solid #172b3b;
+    background:linear-gradient(145deg,rgba(12,26,42,.75),rgba(5,13,23,.8));
+    border-radius:24px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#00bfff;
+    filter:blur(80px);
+    opacity:0;
+    right:-30px;
+    top:-30px;
+    transition:.35s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    border-color:#61d9ff;
+    transform:translateY(-8px);
+    border-color:rgba(104,220,255,.4);
+}
+
+.card:hover::before{
+    opacity:.2;
+}
+
+.card-number{
+    color:#4d6377;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:40px;
 }
 
 .card h3{
-    color:#61d9ff;
-    margin-bottom:12px;
+    font-size:24px;
+    margin-bottom:13px;
 }
 
 .card p{
-    color:#8e9bab;
+    color:#8190a1;
+    line-height:1.7;
+    font-size:14px;
 }
 
-.socials{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
+/* SOCIAL */
+
+.social-section{
+    background:linear-gradient(180deg,transparent,rgba(8,25,42,.35),transparent);
+}
+
+.social-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .social{
-    padding:15px 22px;
-    border:1px solid #243949;
-    border-radius:30px;
     text-decoration:none;
     color:white;
+    padding:24px;
+    border:1px solid #172b3b;
+    border-radius:20px;
+    background:#07111d;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    transition:.3s;
 }
 
 .social:hover{
-    border-color:#61d9ff;
-    color:#61d9ff;
+    transform:translateY(-5px);
+    border-color:#68dcff;
 }
+
+.social-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.social-icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:#0d2131;
+    color:#68dcff;
+    font-size:20px;
+    font-weight:900;
+}
+
+.social-name{
+    font-weight:700;
+}
+
+.social-handle{
+    color:#657588;
+    font-size:12px;
+    margin-top:3px;
+}
+
+.arrow{
+    color:#53687c;
+    font-size:20px;
+}
+
+/* CONTACT */
 
 .contact{
     text-align:center;
-    background:linear-gradient(180deg,#050b14,#081827);
+    padding:140px 8%;
+    border-top:1px solid rgba(255,255,255,.05);
 }
 
-.contact p{
-    color:#8998a8;
-    margin:15px auto 30px;
-    max-width:550px;
+.contact .section-description{
+    margin:0 auto 35px;
 }
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#657383;
-    border-top:1px solid #142532;
-    font-size:13px;
+    padding:30px 8%;
+    border-top:1px solid rgba(255,255,255,.06);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#566679;
+    font-size:12px;
+}
+
+.footer-brand{
+    color:#68dcff;
+    font-weight:800;
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+    .market-card{
+        display:none;
+    }
+
+    .cards,
+    .social-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 @media(max-width:700px){
 
-    nav{
-        padding:16px 5%;
+    .navbar{
+        padding:0 6%;
     }
 
-    nav div:last-child{
+    .nav-links{
         display:none;
     }
 
-    .hero{
-        padding:130px 7% 70px;
+    .nav-button{
+        padding:9px 15px;
     }
 
-    .hero p{
+    .hero{
+        padding:140px 7% 90px;
+    }
+
+    .hero h1{
+        font-size:58px;
+        letter-spacing:-3px;
+    }
+
+    .hero-description{
         font-size:16px;
     }
 
     section{
-        padding:70px 7%;
+        padding:80px 7%;
     }
 
-    .cards{
-        grid-template-columns:1fr;
+    .card{
+        min-height:auto;
     }
 
-    .section-title{
-        font-size:32px;
+    footer{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
     }
 }
 </style>
@@ -230,162 +520,409 @@ footer{
 
 <body>
 
-<nav>
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
     <div class="logo">SUNNY PRAJAPATII</div>
 
-    <div>
+    <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
+        <a href="#social">Social</a>
     </div>
+
+    <a class="nav-button" href="#contact">Let's Talk</a>
+
 </nav>
 
+
+<!-- HERO -->
+
 <section class="hero" id="home">
+
+    <div class="hero-grid"></div>
+
     <div class="hero-content">
 
-        <span class="tag">TRADER • CONTENT CREATOR</span>
+        <div class="badge">
+            <span class="dot"></span>
+            TRADER • CONTENT CREATOR
+        </div>
 
         <h1>
             Build Your<br>
             <span class="gradient">Own Future.</span>
         </h1>
 
-        <p>
-            Welcome to my personal space. I explore trading,
-            markets, digital content and ideas that turn ambition
-            into action.
+        <p class="hero-description">
+            Welcome to my digital space — where trading,
+            creativity and technology come together.
+            I believe in learning, building and creating
+            something better every day.
         </p>
 
-        <div class="buttons">
-            <a class="primary" href="#work">Explore My Work</a>
-            <a class="secondary" href="#contact">Contact Me</a>
+        <div class="hero-buttons">
+
+            <a href="#work" class="btn btn-primary">
+                Explore My Work →
+            </a>
+
+            <a href="#social" class="btn btn-outline">
+                Connect With Me
+            </a>
+
         </div>
 
     </div>
+
+
+    <!-- MARKET CARD -->
+
+    <div class="market-card">
+
+        <div class="market-label">
+            Focus
+        </div>
+
+        <div class="market-title">
+            Markets & Creativity
+        </div>
+
+        <div class="chart">
+
+            <svg viewBox="0 0 280 100" preserveAspectRatio="none">
+
+                <polyline
+                    points="0,80 25,70 45,75 70,52 95,60 120,38 145,50 170,25 195,40 220,18 245,30 280,8"
+                    fill="none"
+                    stroke="#68dcff"
+                    stroke-width="3"
+                />
+
+            </svg>
+
+        </div>
+
+        <div class="market-number">
+            CREATE.
+        </div>
+
+        <div class="market-small">
+            Learn • Build • Improve
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+    <div class="section-tag">
+        01 — About
+    </div>
 
-    <p class="section-subtitle">
-        Trader. Creator. Always learning.
+    <h2 class="section-title">
+        More than just a profile.
+    </h2>
+
+    <p class="section-description">
+        I'm Sunny Prajapatii — a trader and digital creator
+        interested in markets, technology, content creation
+        and building a strong personal brand.
     </p>
+
 
     <div class="cards">
 
         <div class="card">
-            <h3>Trading</h3>
+
+            <div class="card-number">01 / TRADING</div>
+
+            <h3>Market Mindset</h3>
+
             <p>
-                Focused on understanding price action,
-                market structure, options and disciplined
-                risk management.
+                Studying price action, options, market structure
+                and risk management while continuously improving
+                my trading process.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>Content</h3>
-            <p>
-                Creating digital content around trading,
-                finance, gaming and creative ideas.
-            </p>
-        </div>
 
         <div class="card">
-            <h3>Vision</h3>
+
+            <div class="card-number">02 / CREATION</div>
+
+            <h3>Content Creation</h3>
+
             <p>
-                Build a strong personal brand while
-                continuously improving skills and knowledge.
+                Creating digital content, short-form videos,
+                visual concepts and experimenting with new
+                creative ideas.
             </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">03 / FUTURE</div>
+
+            <h3>Keep Building</h3>
+
+            <p>
+                Learning new skills, exploring technology and
+                building projects that can create real long-term
+                value.
+            </p>
+
         </div>
 
     </div>
 
 </section>
+
+
+<!-- WORK -->
 
 <section id="work">
 
-    <h2 class="section-title">My Work</h2>
+    <div class="section-tag">
+        02 — Work
+    </div>
 
-    <p class="section-subtitle">
-        Explore what I create.
+    <h2 class="section-title">
+        What I'm building.
+    </h2>
+
+    <p class="section-description">
+        A combination of markets, digital media and creative
+        projects.
     </p>
+
 
     <div class="cards">
 
         <div class="card">
-            <h3>Market Content</h3>
+
+            <div class="card-number">01</div>
+
+            <h3>Trading</h3>
+
             <p>
-                Trading observations, market education
-                and financial content.
+                Market analysis, trading concepts,
+                options and continuous learning.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>Video Creation</h3>
-            <p>
-                Short-form videos, editing and
-                creative digital projects.
-            </p>
-        </div>
 
         <div class="card">
+
+            <div class="card-number">02</div>
+
+            <h3>Digital Content</h3>
+
+            <p>
+                YouTube, Instagram, video editing,
+                visual storytelling and social media.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-number">03</div>
+
             <h3>Digital Projects</h3>
+
             <p>
-                Experiments with websites, AI,
-                branding and new technologies.
+                Websites, AI experiments, branding
+                and new technology.
             </p>
+
         </div>
 
     </div>
 
 </section>
 
-<section>
 
-    <h2 class="section-title">Connect With Me</h2>
+<!-- SOCIAL -->
 
-    <p class="section-subtitle">
-        Follow my journey online.
+<section class="social-section" id="social">
+
+    <div class="section-tag">
+        03 — Connect
+    </div>
+
+    <h2 class="section-title">
+        Find me online.
+    </h2>
+
+    <p class="section-description">
+        Follow my journey, content and latest projects.
     </p>
 
-    <div class="socials">
 
-        <a class="social" href="#" target="_blank">
-            Instagram
+    <div class="social-grid">
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="social"
+            href="https://www.instagram.com/sunny.prajapatii/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-left">
+
+                <div class="social-icon">
+                    ◎
+                </div>
+
+                <div>
+
+                    <div class="social-name">
+                        Instagram
+                    </div>
+
+                    <div class="social-handle">
+                        @sunny.prajapatii
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">↗</div>
+
         </a>
 
-        <a class="social" href="#" target="_blank">
-            YouTube
+
+        <!-- YOUTUBE -->
+
+        <a
+            class="social"
+            href="https://youtube.com/@gdwith.sunshine"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-left">
+
+                <div class="social-icon">
+                    ▶
+                </div>
+
+                <div>
+
+                    <div class="social-name">
+                        YouTube
+                    </div>
+
+                    <div class="social-handle">
+                        @gdwith.sunshine
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">↗</div>
+
         </a>
 
-        <a class="social" href="#" target="_blank">
-            WhatsApp
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="social"
+            href="https://wa.me/919265170533"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+
+            <div class="social-left">
+
+                <div class="social-icon">
+                    ☎
+                </div>
+
+                <div>
+
+                    <div class="social-name">
+                        WhatsApp
+                    </div>
+
+                    <div class="social-handle">
+                        +91 92651 70533
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="arrow">↗</div>
+
         </a>
 
     </div>
 
 </section>
+
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
-    <h2 class="section-title">Let's Connect</h2>
+    <div class="section-tag">
+        04 — Contact
+    </div>
 
-    <p>
-        Have an idea, collaboration or project?
-        Feel free to reach out.
+    <h2 class="section-title">
+        Let's build something.
+    </h2>
+
+    <p class="section-description">
+        Have a project, collaboration or idea?
+        Reach out and let's connect.
     </p>
 
-    <a class="primary buttons" href="mailto:your@email.com">
-        Contact Me
+    <a
+        href="https://wa.me/919265170533"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+    >
+        Chat on WhatsApp →
     </a>
 
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Sunny Prajapatii. All rights reserved.
+
+    <div>
+        © 2026 <span class="footer-brand">Sunny Prajapatii</span>
+    </div>
+
+    <div>
+        Trader • Creator • Builder
+    </div>
+
 </footer>
 
+
 </body>
-  </html>
+</html>
